@@ -56,6 +56,11 @@ return [
      * X-Powered-By
      *
      * Note: it will not add to response header if the value is empty string.
+     *
+     * Also, verify that expose_php is turned Off in php.ini.
+     * Otherwise the header will still be included in the response.
+     *
+     * Reference: https://github.com/bepsvpt/secure-headers/issues/58#issuecomment-782332442
      */
 
     'x-powered-by' => '',
@@ -578,9 +583,9 @@ return [
             'report-sample' => false,
 
             'allow' => [
-                // 'url',
                 (parse_url(env('APP_URL', 'http://localhost')))['host'],
                 'cdnjs.cloudflare.com'
+                // 'url',
             ],
 
             'schemes' => [

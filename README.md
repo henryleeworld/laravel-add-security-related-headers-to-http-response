@@ -1,4 +1,4 @@
-# Laravel 8 伺服器端回應加入安全相關 HTTP 標頭
+# Laravel 9 伺服器端回應加入安全相關 HTTP 標頭
 
 引入 bepsvpt 的 secure-headers 套件來擴增伺服器端回應加入安全相關 HTTP 標頭，不需大幅度的修改程式，就可以讓網站與使用者瀏覽器之間有更多的安全防護，因此這個方法是比較簡便可以達成，缺點是這些 HTTP 標頭在比較舊版本的瀏覽器有些是不支援的。
 
@@ -23,5 +23,5 @@ $ php artisan key:generate
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/q1lsG5k.png)
+![](https://i.imgur.com/nheS2dM.png)
 > 過去往往只能被動地防堵瀏覽器的惡意請求，而有了 HTTP 安全相關的標頭，則可以主動控制瀏覽器不發起非安全操作，對安全防護來說，是不小的助益
