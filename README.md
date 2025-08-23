@@ -1,4 +1,4 @@
-# Laravel 11 伺服器端回應加入安全相關 HTTP 標頭
+# Laravel 12 伺服器端回應加入安全相關 HTTP 標頭
 
 引入 bepsvpt 的 secure-headers 套件來擴增伺服器端回應加入安全相關 HTTP 標頭，不需大幅度的修改程式，就可以讓網站與使用者瀏覽器之間有更多的安全防護，因此這個方法是比較簡便可以達成，缺點是這些 HTTP 標頭在比較舊版本的瀏覽器有些是不支援的。
 
@@ -16,6 +16,10 @@ $ composer install
 ```sh
 $ php artisan key:generate
 ```
+- 執行 __Artisan__ 指令的 __migrate__ 來執行所有未完成的遷移。
+```sh
+$ php artisan migrate
+```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
 - 你可以經由 `/` 來進行歡迎畫面瀏覽。
 > 如果是要避免 PHP 資訊暴露在 HTTP 標頭中，請將 `php.ini` 裡面的 `expose_php = Off`。
@@ -23,5 +27,5 @@ $ php artisan key:generate
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/dxU76yE.png)
+![](https://i.imgur.com/BR1kwO8.png)
 > 過去往往只能被動地防堵瀏覽器的惡意請求，而有了 HTTP 安全相關的標頭，則可以主動控制瀏覽器不發起非安全操作，對安全防護來說，是不小的助益
